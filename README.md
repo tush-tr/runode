@@ -1,4 +1,7 @@
 # runode
+<img src="logo.png">
+
+
 A node.js app runner.
 
 - Runode is a node app runner.

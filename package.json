@@ -1,6 +1,6 @@
 {
   "name": "runode",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a nodejs app runner",
   "main": "index.js",
   "scripts": {

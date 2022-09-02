@@ -11,9 +11,9 @@ const { spawn } = require("child_process");
  * @params file
  */
 
-const start = debounce((file) => {
+const runScript = (file) => {
   console.log(chalk.blue.bgRed.bold(`EXECUTING ${file} `));
   spawn("node", [file], { stdio: "inherit" });
-}, 100);
+};
 
-module.exports = start;
+module.exports = runScript;

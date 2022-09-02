@@ -5,8 +5,10 @@
 const chokidar = require("chokidar");
 const runScript = require("./runScript");
 const fs = require("fs");
+const { debounce } = require("lodash");
 const fsPromises = fs.promises;
 
+const start = debounce(runScript, 100);
 /**
  * Callback function for prog
  * @param filename
@@ -21,8 +23,8 @@ const watch = async ({ filename }) => {
   }
   chokidar
     .watch(filename)
-    .on("add", runScript)
-    .on("change", runScript)
-    .on("unlink", runScript);
+    .on("add", start)
+    .on("change", start)
+    .on("unlink", start);
 };
 module.exports = watch;
